@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replacing and removing elements</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ccc;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container{
+            height: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            background: #000;
+            color: #fff;
+            border-radius: 25px;
+            padding: 1rem 2rem;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #333;
+        }
+
+        .card {
+            border: 2px solid #333;
+            height: 150px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            background: #fff;
+        }
+
+        .dark-card {
+            background: #000;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="k-card">
+            <h1>K</h1>
+        </div>
+        <div class="card" id="q-card">
+            <h1>Q</h1>
+        </div>
+        <div class="card" id="j-card">
+            <h1>J</h1>
+        </div>
+    </div>
+    <a href="#" class="btn">Button</a>
+
+    <script>
+        let val;
+        
+        // Create new card
+        const newCard = document.createElement('div');
+        // Add id
+        newCard.id = 'joker';
+        // Add class
+        newCard.className = 'card';
+        // Add text
+        newCard.appendChild(document.createTextNode('Joker'));
+
+        // Get k-card
+        const oldCard = document.getElementById('k-card');
+        
+        // Get parent
+        const container = document.querySelector('.container');
+        
+        // Replace k-card with joker
+        container.replaceChild(newCard, oldCard);
+
+        val = container;
+
+        // Remove Element
+        const cards = document.querySelectorAll('.card');
+
+        // Remove card
+        cards[0].remove();
+
+        // Remove card through parent
+        container.removeChild(cards[1]);
+
+        // Adding the cards
+        container.prepend(oldCard);
+        container.prepend(newCard);
+
+        // Classes
+        val = oldCard.className;
+        val = oldCard.classList;
+        oldCard.classList.add('dark-card'); // Add class to a class list
+        oldCard.classList.remove('dark-card'); // Remove class from the class list
+
+        // Get button
+        btn = document.querySelector('.btn');
+
+        // Attributes
+        val = btn.getAttribute('href'); // Get Attribute value
+        // val = btn.setAttribute('href', 'https://google.com'); // Set Attribute value
+        val = btn.hasAttribute('title'); // Check if the element has that attribute or not
+
+        // Output
+        console.log(val);
+    </script>
+</body>
+</html>

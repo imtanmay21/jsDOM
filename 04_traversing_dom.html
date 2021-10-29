@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting single elements</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ccc;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container{
+            height: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            background: #000;
+            color: #fff;
+            border-radius: 25px;
+            padding: 1rem 2rem;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #333;
+        }
+
+        .card {
+            border: 2px solid #333;
+            height: 150px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="k-card">
+            <h1>K</h1>
+        </div>
+        <div class="card" id="q-card">
+            <h1>Q</h1>
+        </div>
+        <div class="card" id="j-card">
+            <h1>J</h1>
+        </div>
+    </div>
+    <a href="#" class="btn">Button</a>
+
+    <script>
+        let val;
+
+        // Get container class
+        const container = document.querySelector('.container');
+        val = container.childNodes;
+        val = container.childNodes[0]; // Text nodes are also included in child nodes
+        val = container.childNodes[0].nodeName;
+        val = container.childNodes[0].nodeType; // 3 for text node
+        val = container.childNodes[1].nodeName;
+        val = container.childNodes[1].nodeType; // 1 for element node
+
+        val = container.children; // Html collection without the text nodes
+        val = container.children[0]; // Get first element child
+        val = container.children[0].children;
+
+        // // Get first element child
+        val = container.firstChild; // Get first node child
+        val = container.firstElementChild; // Get first element child
+
+        // // Get last element child
+        val = container.lastChild; // Get last child node
+        val = container.lastElementChild; // Get last element child node
+
+        // // Count child elements
+        val = container.childElementCount; // Get number of child elements
+
+        card = container.firstElementChild;
+        
+        // // Get parent node
+        val = card.parentNode;
+        val = card.parentElement;
+        val = card.parentElement.parentElement;
+
+        // Siblings
+        val = card.nextSibling; // Get next node sibling
+        val = card.nextElementSibling; // Get next element sibling
+        val = card.nextElementSibling.nextElementSibling;
+
+        // Output
+        console.log(val);
+    </script>
+</body>
+</html>

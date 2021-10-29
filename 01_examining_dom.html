@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examining DOM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ccc;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container{
+            height: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            background: #000;
+            color: #fff;
+            border-radius: 25px;
+            padding: 1rem 2rem;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #333;
+        }
+
+        .card {
+            border: 2px solid #333;
+            height: 150px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>K</h1>
+        </div>
+        <div class="card">
+            <h1>Q</h1>
+        </div>
+        <div class="card">
+            <h1>J</h1>
+        </div>
+    </div>
+    <a href="#" class="btn">Button</a>
+
+    <script>
+        let val;
+
+        // Document
+        val = document;
+        val = document.all;
+        val = document.all[1];
+        val = document.all.length;
+        val = document.head;
+        val = document.body;
+        val = document.doctype;
+        val = document.domain;
+        val = document.URL;
+        val = document.characterSet;
+
+        // // Links
+        val = document.links;
+        val = document.links[0];
+        val = document.links[0].className;
+        val = document.links[0].classList;
+
+        // Output
+        console.log(val);
+    </script>
+</body>
+</html>

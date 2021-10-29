@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ccc;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container{
+            height: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            background: #000;
+            color: #fff;
+            border-radius: 25px;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #333;
+        }
+
+        .card {
+            border: 2px solid #333;
+            height: 150px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            background: #fff;
+        }
+
+        .dark-card {
+            background: #000;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="k-card">
+            <h1>K</h1>
+        </div>
+        <div class="card" id="q-card">
+            <h1>Q</h1>
+        </div>
+        <div class="card" id="j-card">
+            <h1>J</h1>
+        </div>
+    </div>
+    <a href="#" class="btn">Remove Card</a>
+
+    <script>
+        let val;
+
+        // Get card
+        cards = document.querySelectorAll('.card');
+
+        // Get button
+        btn = document.querySelector('.btn'); 
+
+        // Add event
+        btn.addEventListener('click', function(e){
+            cards[0].remove(); // Removing card
+        })
+
+        // Adding card
+        document.querySelector('.container').prepend(cards[0]);
+
+        // Use function name
+        function onClick(e){
+            console.log('Removing card');
+            cards[0].remove(); // Removing card
+            console.log(e);
+            console.log(e.target);
+            console.log(e.target.className);
+
+            // Get position of event relative to window
+            console.log(e.clientY);
+            console.log(e.clientX);
+
+            // Get position of event relative to element
+            console.log(e.offsetY);
+            console.log(e.offsetX);
+
+            // Get event type
+            console.log(e.type);
+
+            // Get timestamp
+            console.log(e.timeStamp);
+        }
+
+        // Add event to a already declared function
+        btn.addEventListener('click', onClick); 
+
+        // Output
+        console.log(val);
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard events</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        form {
+            background: #fff;
+            width: 300px;
+            height: 400px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            border: #000 1px solid;
+            border-radius: 10px;
+        }
+
+        .form-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ccc;
+        }
+
+        .btn {
+            width: 100%;
+            border: none;
+            background: #333;
+            color: #fff;
+            border-radius: 25px;
+            height: 50px;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .form-grp {
+            line-height: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-grp #name {
+            width: 100%;
+            border: #333 solid 1px;
+            height: 30px;
+            padding: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="#">
+            <div class="form-grp">
+                <label for="name">Enter Your name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <input type="submit" value="Submit" class="btn">
+        </form>
+    </div>
+
+    <script>
+        // Get elements
+        const form = document.querySelector('form');
+        const name = document.querySelector('#name');
+
+        // Set input value
+        // name.value = 'Tanmay';
+
+        // Keyboard events
+        
+        // Keydown event
+        // name.addEventListener('keydown', runEvent);
+
+        // Keyup event
+        // name.addEventListener('keyup', runEvent);
+
+        // Keypress event
+        // name.addEventListener('keypress', runEvent);
+
+        // Focus event
+        // name.addEventListener('focus', runEvent);
+
+        // Blur event
+        // name.addEventListener('blur', runEvent);
+
+        // Cut event
+        // name.addEventListener('cut', runEvent);
+
+        // Paste event
+        // name.addEventListener('paste', runEvent);
+
+        // Input event
+        name.addEventListener('input', runEvent);
+
+        // Run event
+        function runEvent(e){
+            console.log(e.type);
+            console.log(name.value);
+            // console.log(e.target.value);
+        }
+    </script>
+</body>
+</html>
